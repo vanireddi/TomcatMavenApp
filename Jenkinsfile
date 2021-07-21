@@ -12,7 +12,7 @@ pipeline {
         stage('Clone') {
             steps {
                //add script here to clone github repository
-               git branch: 'master', credentialsId: 'fa351df9-893c-4f9d-8b8c-3d8a26a23038', url: 'https://github.com/AKSarav/TomcatMavenApp.git'
+               git branch: 'main', credentialsId: 'fa351df9-893c-4f9d-8b8c-3d8a26a23038', url: 'https://github.com/gvreddy1265/TomcatMavenApp.git'
             }
         }
         
