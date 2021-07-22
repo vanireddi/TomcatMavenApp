@@ -42,6 +42,12 @@ pipeline {
                 //add a script to publish jar file into Nexus Repository
                 sh '${MAVEN_HOME} -s ./settings.xml deploy'
             }
+
+            stage('Deploy to Tomcat'){
+                //add a script to deploy war file into tomcat server
+                sh '${MAVEN_HOME} -s ./settings.xml tomcat7:undeploy' //remove the existing app
+                sh '${MAVEN_HOME} -s ./settings.xml tomcat7:deploy'  //deploy the latest app into tomcat
+            }
         }
     }
 }
