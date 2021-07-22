@@ -42,6 +42,7 @@ pipeline {
                 //add a script to publish jar file into Nexus Repository
                 sh '${MAVEN_HOME} -s ./settings.xml deploy'
             }
+        }
 
             stage('Deploy to Tomcat'){
                 steps{
@@ -50,6 +51,5 @@ pipeline {
                 sh '${MAVEN_HOME} -s ./settings.xml tomcat7:deploy'  //deploy the latest app into tomcat
                 }
             }
-        }
     }
 }
