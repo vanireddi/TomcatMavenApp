@@ -44,9 +44,11 @@ pipeline {
             }
 
             stage('Deploy to Tomcat'){
+                steps{
                 //add a script to deploy war file into tomcat server
                 sh '${MAVEN_HOME} -s ./settings.xml tomcat7:undeploy' //remove the existing app
                 sh '${MAVEN_HOME} -s ./settings.xml tomcat7:deploy'  //deploy the latest app into tomcat
+                }
             }
         }
     }
