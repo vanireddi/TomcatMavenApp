@@ -9,21 +9,21 @@ pipeline {
             }
         }
         
-        stage('Clone') {
-            steps {
-               //add script here to clone github repository
-               git branch: 'main',  url: https://github.com/vanireddi/TomcatMavenApp.git
+        stage('Clone'){
+            steps{
+                //add script here to clone github repository
+                git branch: 'main', url:https://github.com/vanireddi/TomcatMavenApp.git
             }
         }
 
-     stage('compile'){
-         steps{
-             // add script here to git repository
-             sh 'mvn compile'
+        stage('compile'){
+            steps{
+               // add script here to git repository
+               sh 'mvn compile'
             }
         }   
     }
- }
+}
 
         
     
