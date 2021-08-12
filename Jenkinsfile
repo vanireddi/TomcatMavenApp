@@ -16,7 +16,13 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }   
-    }
+        stage('test'){
+            steps{
+                // add script here to mvn test
+                sh 'mvn test' 
+            }
+        }
+     }
 }
 
         
