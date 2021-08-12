@@ -22,6 +22,13 @@ pipeline {
                 sh 'mvn test' 
             }
         }
+        stage('package'){
+            steps{
+                // add script here to mvn package
+                sh 'mvn package'
+            }
+        }
+
      }
 }
 
