@@ -13,7 +13,7 @@ pipeline {
         stage('compile'){
             steps{
                // add script here to git repository
-               sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }   
     }
